@@ -1,2 +1,2 @@
 # node-server-raw
-Raw Node.JS server
+Raw Node.JS server without ExpressJS
