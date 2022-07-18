@@ -1,0 +1,25 @@
+{
+  "name": "server-raw",
+  "version": "1.0.0",
+  "description": "Raw Node.JS server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fayadchowdhury/node-server-raw.git"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "http",
+    "https"
+  ],
+  "author": "Ahmad Al Fayad Chowdhury",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fayadchowdhury/node-server-raw/issues"
+  },
+  "homepage": "https://github.com/fayadchowdhury/node-server-raw#readme"
+}
