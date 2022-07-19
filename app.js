@@ -32,13 +32,18 @@ const server = http.createServer((req, res) => { // this creates an HTTP server 
       body.push(chunk);
     }); // attaches a listener to listen for incoming data which arrives in buffered chunks
     
-    req.on('end', () => {
+    return req.on('end', () => {
       const message = Buffer.concat(body).toString().split('=')[1]; // creates a Buffer object concatenating the message body and then converting it to a string and splits it at delimiter '=' and takes the latter half
-      res.statusCode = 302; // default redirection status code
-      res.setHeader('Location', '/'); // redirects to /
-      fs.writeFileSync('message.txt', message);
-      return res.end();
-    })
+      fs.writeFile('message.txt', message, (err) => {
+        if ( err )
+        {
+          console.log(err);
+        }
+        res.statusCode = 302; // default redirection status code
+        res.setHeader('Location', '/'); // redirects to /
+        return res.end();
+      });
+    }); // attaches a listener to listen for the end of incoming data
   }
 });
 
